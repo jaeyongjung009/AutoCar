@@ -1,0 +1,12 @@
+<launch>
+    <!-- Launch the polyfitting node -->
+    <node pkg="stanley_control" type="polyfitting_node" name="polyfitting_node" output="screen">
+        <remap from="/Path/LocalWaypoint/OnBody/" to="/path/for/your/input"/>
+        <!-- Add other parameters or remappings as needed -->
+    </node>
+
+    <!-- Launch the stanley controller node -->
+    <node pkg="stanley_control" type="stanley_controller_node" name="stanley_controller_node" output="screen">
+        <!-- Add parameters or remappings if needed -->
+    </node>
+</launch>

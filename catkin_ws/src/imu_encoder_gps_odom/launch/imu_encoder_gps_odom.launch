@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!-- rviz에서 odometry를 그려주는 노드 -->
+    <node pkg="imu_encoder_gps_odom" type="imu_encoder_gps_odom" name="imu_encoder_gps_odom" output="screen"/>
+    
+    <!-- IMU 드라이버 실행 노드 -->
+    <node pkg="iahrs_driver" type="iahrs_driver" name="iahrs_driver" output="screen" />
+
+    <!-- rosserial 실행 노드 -->
+    <node name="serial_node" pkg="rosserial_python" type="serial_node.py" output="screen">
+        <param name="port" value="/dev/ttyACM0"/>
+        <param name="baud" value="57600"/>
+    </node>
+
+</launch>
